@@ -10,88 +10,73 @@
     scroll-behavior: smooth;
 }
 
-.darkSection {
+section {
+    padding: 2.5em;
+    min-height: 100vh;
+    background: #000;
+    color: #fff;
+}
+
+/* .darkSection {
     background: #000;
     color: #fff;
     width: 100%;
-    height: 100vh;
 }
 
 lightSection {
     background: #fff;
     color: #000;
     width: 100%;
-    height: 100vh;
+} */
+
+p {
+    font-size: 1.3em;
+    margin: 20px 0;
+    font-weight: 300;
 }
 
 /* Home */
 .home {
     position: relative;
-    top: 0;
-    right: 0;
     width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
 }
 
+/* Texts (on left) */
 .contentHome {
-    width: 100%;
-    height: 100%;
-}
-
-/* Logo */
-.logoBox {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20%;
-    margin: 1em;
-}
-
-.logoBox img {
-    width: 100%;
-}
-
-/* Title */
-.titleHome {
-    opacity: 0;
-    transform: translateX(100%);
-    animation: homeTitleAnim 1.5s forwards 1s;
-}
-
-.logoBox::before {
     position: absolute;
-    content: '';
     top: 0;
     left: 0;
-    width: 5px;
+    width: calc(100% - 40%);
     height: 100%;
-    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+    animation: homeTitleAnim 1s forwards 0s;
 }
 
-.titleHome h4 > span {
+.home .contentHome h4 > span {
     color: #00bcd4;
     font-size: 1.5em;
     font-weight: 700;
 }
 
-.titleHome h4 {
-    font-size: 1.5em;
+.home .contentHome h4 {
+    font-size: 1.7em;
     font-weight: 400;
+    animation: homeTitleAnim 1s forwards 0s;
 }
 
-.titleHome h2 {
-    font-size: 2em;
+.home .contentHome h2 {
+    font-size: 2.5em;
     line-height: 1em;
+    animation: homeTitleAnim 1s forwards 0.5s;
 }
 
 @keyframes homeTitleAnim {
     0%, 25% {
         opacity: 0;
+        transform: translateX(100%);
     }
 
     100% {
@@ -100,6 +85,72 @@ lightSection {
     }
 }
 
-@keyframes quoteBar {
-    
+.btnAbout {
+    background: #00bcd4;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.socialMedia {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -10%;
+}
+
+.socialMedia li {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    list-style: none;
+}
+
+.socialMedia li img {
+    width: 100%;
+    height: 100%;
+    transform: scale(0.5);
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.socialMedia li img:hover {
+    transform: scale(0.6);
+    opacity: 1;
+}
+
+/* Logo */
+.logoBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logoBox img {
+    display: block;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    object-fit: scale-down;
+}
+
+/* Mediaqueryies */
+@media (max-width: 991px) {
+    .logoBox, .logoBox img {
+        display: none;
+    }
+
+    .contentHome {
+        width: 100%;
+    }
 }
