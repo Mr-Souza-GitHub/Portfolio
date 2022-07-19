@@ -1,0 +1,105 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Universal & facilites */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan';
+    scroll-behavior: smooth;
+}
+
+.darkSection {
+    background: #000;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+}
+
+lightSection {
+    background: #fff;
+    color: #000;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Home */
+.home {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.contentHome {
+    width: 100%;
+    height: 100%;
+}
+
+/* Logo */
+.logoBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    margin: 1em;
+}
+
+.logoBox img {
+    width: 100%;
+}
+
+/* Title */
+.titleHome {
+    opacity: 0;
+    transform: translateX(100%);
+    animation: homeTitleAnim 1.5s forwards 1s;
+}
+
+.logoBox::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: #fff;
+}
+
+.titleHome h4 > span {
+    color: #00bcd4;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.titleHome h4 {
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.titleHome h2 {
+    font-size: 2em;
+    line-height: 1em;
+}
+
+@keyframes homeTitleAnim {
+    0%, 25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes quoteBar {
+    
+}
