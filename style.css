@@ -1,7 +1,7 @@
 /* Font */
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* Universal & facilites */
+/* General & Universal */
 * {
     margin: 0;
     padding: 0;
@@ -17,17 +17,29 @@ section {
     color: #fff;
 }
 
-/* .darkSection {
-    background: #000;
-    color: #fff;
+.sectionTitle {
     width: 100%;
+    text-align: center;
 }
 
-lightSection {
+.sectionTitle h2 {
+    position: relative;
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sectionTitle h2::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10%;
+    width: 60px;
+    height: 4px;
     background: #fff;
-    color: #000;
-    width: 100%;
-} */
+}
 
 p {
     font-size: 1.3em;
@@ -35,10 +47,58 @@ p {
     font-weight: 300;
 }
 
-/* Home */
+/* Home section */
 .home {
     position: relative;
     width: 100%;
+    height: 90vh;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    height: 10vh;
+    z-index: 100;
+    padding-inline: 5%;
+}
+
+.headerLogo {
+    width: auto;
+    height: 100%;
+    padding: .7em;
+}
+
+.headerLogo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.headerNav {
+    display: flex;
+    list-style: none;
+}
+
+.headerNav li {
+    margin-inline: 10px;
+}
+
+.headerNav a {
+    font-weight: 500;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: #fff;
+    transition: .5s;
+}
+
+.headerNav a:hover {
+    color: #00bcd4;
 }
 
 /* Texts (on left) */
@@ -98,9 +158,9 @@ p {
 .socialMedia {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
-    bottom: -10%;
+    margin-top: 15%;
 }
 
 .socialMedia li {
@@ -123,7 +183,7 @@ p {
     opacity: 1;
 }
 
-/* Logo */
+/* Logo (on right) */
 .logoBox {
     position: absolute;
     top: 0;
@@ -143,6 +203,21 @@ p {
     height: 50%;
     object-fit: scale-down;
 }
+
+/* About section */
+.contentAbout p {
+    letter-spacing: 1px;
+}
+
+.contentAbout .imgBoxAbout {
+    background: red;
+}
+
+/* Work section */
+
+
+/* Contact section */
+
 
 /* Mediaqueryies */
 @media (max-width: 991px) {
