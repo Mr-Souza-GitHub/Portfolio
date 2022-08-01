@@ -51,7 +51,7 @@ p {
 .btn {
     position: relative;
     background: transparent;
-    color: #00bcd4;
+    color: var(--crl);
     padding: 10px 30px;
     display: inline-block;
     text-decoration: none;
@@ -62,9 +62,9 @@ p {
 }
 
 .btn:hover {
-    background: #00bcd4;
+    background: var(--crl);
     color: black;
-    box-shadow: 0 0 50px #00bcd4;
+    box-shadow: 0 0 50px var(--crl);
     transition-delay: 0.5s;
 }
 
@@ -75,8 +75,8 @@ p {
     left: 0;
     width: 15px;
     height: 15px;
-    border-top: 2px solid #00bcd4;
-    border-left: 2px solid #00bcd4;
+    border-top: 2px solid var(--crl);
+    border-left: 2px solid var(--crl);
     transition: 0.5s;
 }
 
@@ -87,8 +87,8 @@ p {
     right: 0;
     width: 15px;
     height: 15px;
-    border-bottom: 2px solid #00bcd4;
-    border-right: 2px solid #00bcd4;
+    border-bottom: 2px solid var(--crl);
+    border-right: 2px solid var(--crl);
     transition: 0.5s;
 }
 
@@ -309,7 +309,7 @@ header {
 
 .card span {
     position: absolute;
-    inset: 5px;
+    inset: 2px;
     border-radius: 1em;
     background: #111;
     z-index: 1;
@@ -336,7 +336,44 @@ header {
 }
 
 /* Contact section */
+.contactForm {
+    position: relative;
+    /* background: red; */
+    width: 100%;
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.contactForm input,
+.contactForm textarea {
+    background: #111;
+    width: 100%;
+    margin-block: 0.5em;
+    border: solid 1px #00bcd4;
+    border-radius: 0.1em;
+    outline: currentColor;
+    padding: 0.5em;
+    font-size: 1.4em;
+    line-height: 1.2em;
+    color: #fff;
+}
+
+.contactForm button {
+    border: none;
+}
+
+.formButtons {
+    margin-top: 1em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.formButtons button {
+    margin-inline: 2em;
+}
 
 /* Mediaqueryies */
 @media (max-width: 991px) {
