@@ -14,7 +14,7 @@
 
 section {
     padding: 2.5em;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     background: #000;
     color: #fff;
@@ -242,7 +242,7 @@ header {
 
 /* Logo (on right) */
 
-.logoBox {
+.profileBox {
     position: absolute;
     top: 0;
     right: 0;
@@ -250,16 +250,26 @@ header {
     height: 100%;
     display: flex;
     align-items: center;
+    /* padding: 1em; */
 }
 
-.logoBox img {
+.profileBox::before {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(90deg, #000, transparent);
+    z-index: 1;
+}
+
+.profileBox img {
     display: block;
     position: relative;
     top: 0;
     right: 0;
     width: 100%;
-    height: 50%;
-    object-fit: scale-down;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -432,12 +442,38 @@ header {
 /* Mediaqueryies */
 
 @media (max-width: 991px) {
-    .logoBox,
-    .logoBox img {
-        display: none;
+    section#home {
+        padding: 0;
     }
+
+    .profileBox {
+        top: 0;
+        right: auto;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .profileBox::before {
+        z-index: 0;
+    }
+
+    .profileBox img {
+        width: auto;
+        clip-path: circle(max(20%, 30%, 40%));
+    }
+    
     .contentHome {
         width: 100%;
+        height: 50%;
+        top: auto;
+        bottom: 0;
+        padding: min(2em, 3em, 5em);
+    }
+
+    .socialMedia {
+        margin-top: auto;
     }
 
     .contactForm,
