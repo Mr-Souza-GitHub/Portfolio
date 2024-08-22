@@ -112,6 +112,28 @@ p {
     height: 90vh;
 }
 
+section#home {
+    /* background: linear-gradient(75deg, black, black, black, #0B0B0B, #1B1B1B, #2B2B2B, #1B1B1B,  #0B0B0B, black, black, black, black, black); */
+    background: black;
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    /* animation: bgAnim 3s ease-in forwards; */
+    /* overflow: hidden; */
+}
+/* 
+@keyframes bgAnim {
+	0% {
+		background-position: 0% 30%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 100% 0%;
+	}
+} */
 
 /* Header */
 
@@ -151,14 +173,19 @@ header {
 
 .headerNav a {
     font-weight: 500;
-    font-size: 1.1em;
+    font-size: 1.4em;
     text-decoration: none;
     color: #fff;
-    transition: .5s;
+    transition: .3s;
 }
 
 .headerNav a:hover {
-    color: #00bcd4;
+    font-weight: bold;
+    color: #f65d35;
+}
+
+.headerBtn {
+    display: none;
 }
 
 
@@ -178,7 +205,7 @@ header {
 }
 
 .home .contentHome h4>span {
-    color: #00bcd4;
+    color: #f65d35;
     font-size: 1.5em;
     font-weight: 700;
 }
@@ -239,6 +266,10 @@ header {
     opacity: 1;
 }
 
+/* Media icons on the header */
+.socialHeader {
+    display: none;
+}
 
 /* Logo (on right) */
 
@@ -250,7 +281,6 @@ header {
     height: 100%;
     display: flex;
     align-items: center;
-    /* padding: 1em; */
 }
 
 .profileBox::before {
@@ -319,7 +349,7 @@ header {
     position: absolute;
     width: 500px;
     height: 500px;
-    background-image: conic-gradient(transparent, transparent, transparent, #00bcd4);
+    background-image: conic-gradient(transparent, transparent, transparent, #f65d35);
     animation: cardBorder 4s linear infinite;
 }
 
@@ -441,18 +471,88 @@ header {
 
 /* Mediaqueryies */
 
-@media (max-width: 991px) {
+@media (max-width: 1000px) {
     section#home {
         padding: 0;
+    }
+
+    header {
+        overflow: hidden;
+    }
+    
+    .headerBtn {
+        width: 40px;
+        height: 40px;
+        /* background: red; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        z-index: 100;
+    }
+
+    .headerNav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        margin-right: -100%;
+        padding: 7em 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        transition: .5s;
+    }
+
+    .headerNav.active {
+        margin-right: 0;
+        background: #0b0b0bcc;
+        backdrop-filter: blur(5px);
+
+    }
+
+    .headerNav li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 20%;
+    }
+
+    .headerNav li a {
+        font-size: 2.4em;
+        font-weight: bold;
+
+    }
+
+    /* Menu bars animations */
+    .bar {
+        width: 100%;
+        height: 4px;
+        background-color: #ffffff;
+        transition: 0.3s;
+    }
+
+    .headerBtn.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .headerBtn.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .headerBtn.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
     }
 
     .profileBox {
         top: 0;
         right: auto;
         width: 100%;
-        height: 50%;
+        height: 40%;
         display: flex;
         justify-content: center;
+        padding: 2.5em;
     }
 
     .profileBox::before {
@@ -466,7 +566,7 @@ header {
     
     .contentHome {
         width: 100%;
-        height: 50%;
+        height: 80%;
         top: auto;
         bottom: 0;
         padding: min(2em, 3em, 5em);
@@ -495,5 +595,15 @@ header {
 
     .formButtons button {
         margin: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .socialMedia {
+        display: none;
+    }
+
+    .socialHeader {
+        display: block;
     }
 }
