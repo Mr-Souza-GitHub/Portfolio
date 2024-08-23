@@ -138,13 +138,14 @@ section#home {
 /* Header */
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: transparent;
+    /* backdrop-filter: blur(15px); */
     height: 10vh;
     z-index: 100;
     padding: 0 5%;
@@ -532,18 +533,18 @@ header {
         background-color: #ffffff;
         transition: 0.3s;
     }
-
-    .headerBtn.active .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+/* 
+    .headerNav .active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 10px);
     }
 
-    .headerBtn.active .bar:nth-child(2) {
+    .headerNav .active .bar:nth-child(2) {
         opacity: 0;
     }
 
-    .headerBtn.active .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
+    .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(10px, -10px);
+    } */
 
     .profileBox {
         top: 0;

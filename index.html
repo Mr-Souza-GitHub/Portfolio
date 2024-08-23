@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="js/script.js" defer></script>
     <title>Portfolio</title>
 </head>
 
@@ -17,10 +18,10 @@
         </div>
 
         <ul class="headerNav">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a class="nav-link" href="#home">Home</a></li>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#projects">Projects</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
 
         <div class="headerBtn">
@@ -28,18 +29,6 @@
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
-
-        <script>
-            headerBtn = document.querySelector("div.headerBtn")
-            headerNav = document.querySelector("ul.headerNav")
-
-            function toggleNav() {
-                headerNav.classList.toggle('active')
-            }
-
-            headerBtn.addEventListener('click', toggleNav)
-            
-        </script>
     </header>
     <!-- Home -->
     <section class="home darkSection" id="home">
