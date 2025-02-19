@@ -135,7 +135,7 @@ section#home {
 	}
 } */
 
-/* Header */
+/* Header ANTIGO*/
 /* 
 header {
     position: fixed;
@@ -254,17 +254,34 @@ header {
     list-style: none;
 }
 
-.socialMedia li img {
+.socialMedia li img,
+.socialMedia li svg {
     width: 100%;
     height: 100%;
     transform: scale(0.5);
     opacity: 0.7;
     transition: 0.5s;
+    fill: #fff;
+    stroke: #fff;
 }
 
-.socialMedia li img:hover {
+.socialMedia li img:hover,
+.socialMedia li svg:hover {
     transform: scale(0.6);
     opacity: 1;
+}
+
+.socialMedia #instagramIcon:hover {
+    stroke: url(#gradienteInstagram);
+    fill: url(#gradienteInstagram);
+}
+.socialMedia #githubIcon:hover {
+    stroke: url(#gradienteGithub);
+    fill: url(#gradienteGithub);
+}
+.socialMedia #linkedinIcon:hover {
+    stroke: url(#gradienteLinkedin);
+    fill: url(#gradienteLinkedin);
 }
 
 /* Media icons on the header */
@@ -582,15 +599,24 @@ header {
 .headerLogo {
     width: 60px;
     height: 60px;
+    padding: 5px;
+    display: grid;
+    place-items: center;
 }
 
 .headerLogo img {
-    width: 100%;
-    height: 100%;
+    width: 85%;
+    height: 85%;
+}
+
+header nav {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
 }
 
 header ul {
-    width: 70%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -612,11 +638,15 @@ header ul {
 }
 
 .headerBtn {
-    position: absolute;
+    /* position: absolute; */
     top: 10px;
     right: 10px;
     width: 60px;
     height: 60px;
     background: #d30;
     display: none;
+}
+
+header:has(.headerNav.active) .headerBtn{
+    position: absolute;
 }
