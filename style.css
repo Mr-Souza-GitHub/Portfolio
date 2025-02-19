@@ -23,6 +23,7 @@ section {
 .sectionTitle {
     width: 100%;
     text-align: center;
+    margin-top: 8vh;
 }
 
 .sectionTitle h2 {
@@ -254,21 +255,26 @@ header {
     list-style: none;
 }
 
-.socialMedia li img,
 .socialMedia li svg {
     width: 100%;
     height: 100%;
     transform: scale(0.5);
     opacity: 0.7;
-    transition: 0.5s;
+    filter: grayscale(1);
     fill: #fff;
     stroke: #fff;
+    /* transition: .5s; */
+    /* Definição específica para cada transição */
+    transition: 
+        transform 0.4s ease-in-out, 
+        opacity 0.4s ease-in-out, 
+        filter 0.6s ease-in-out; /* Delay de 0.3s apenas no grayscale */
 }
 
-.socialMedia li img:hover,
 .socialMedia li svg:hover {
     transform: scale(0.6);
     opacity: 1;
+    filter: grayscale(0);
 }
 
 .socialMedia #instagramIcon:hover {
@@ -499,6 +505,7 @@ header {
     }
 
     .headerNav {
+        display: none;
         position: absolute;
         top: 0;
         right: 0;
