@@ -193,6 +193,10 @@ header {
 
 /* Texts (on left) */
 
+.home {
+    overflow: hidden;
+}
+
 .contentHome {
     position: absolute;
     top: 0;
@@ -505,7 +509,6 @@ header {
     }
 
     .headerNav {
-        display: none;
         position: absolute;
         top: 0;
         right: 0;
