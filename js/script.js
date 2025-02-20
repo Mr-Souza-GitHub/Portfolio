@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function for opening and closing the menu
     function toggleNav() {
         headerNav.classList.toggle('active')
+        headerBtn.classList.toggle('active')
     }
     
     // Event listener for the users click

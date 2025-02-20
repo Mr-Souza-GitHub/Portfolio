@@ -105,6 +105,87 @@ p {
 }
 
 
+
+/* Remaking header */
+
+header {
+    position: fixed;
+    width: 100%;
+    padding-inline: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    background: #00000033;
+}
+
+.headerLogo {
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    display: grid;
+    place-items: center;
+}
+
+.headerLogo img {
+    width: 85%;
+    height: 85%;
+}
+
+header nav {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+
+header ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-inline: 1em;
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4em;
+    color: white;
+    transition: .4s;
+}
+
+.nav-link:hover {
+    letter-spacing: 1px;
+    color: #f65d35;
+}
+
+.headerBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    /* background: #d30; */
+    display: none;
+}
+
+.headerBtn #close, 
+.headerBtn.active #menu {
+    display: none;
+    transition: .3s;
+}
+.headerBtn.active #close{
+    display: block;
+}
+
+
+header:has(.headerNav.active) .headerBtn{
+    position: absolute;
+}
+
+
 /* Home section */
 
 .home {
@@ -210,29 +291,31 @@ header {
     animation: homeTitleAnim 1s forwards 0s;
 }
 
-.home .contentHome h4>span {
+.home .contentHome #helloWorld {
     color: #f65d35;
     font-size: 1.5em;
     font-weight: 700;
-}
-
-.home .contentHome h4 {
-    font-size: 1.7em;
-    font-weight: 400;
     animation: homeTitleAnim 1s forwards 0s;
 }
 
-.home .contentHome h2 {
+.home .contentHome #myName {
     font-size: 2.5em;
     line-height: 1em;
-    animation: homeTitleAnim 1s forwards 0.5s;
+    animation: homeTitleAnim 1s forwards .097s;
+}
+
+.home .contentHome #ocupation {
+    font-size: 1.7em;
+    font-weight: 400;
+    animation: homeTitleAnim 1s forwards .17s;
+    ani
 }
 
 @keyframes homeTitleAnim {
     0%,
     25% {
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateX(70%);
     }
     100% {
         opacity: 1;
@@ -504,6 +587,14 @@ header {
         padding: 0;
     }
 
+    header {
+        backdrop-filter: blur(0);
+    }
+
+    .headerLogo {
+        display: none;
+    }
+
     .headerBtn {
         display: block !important;
     }
@@ -514,13 +605,18 @@ header {
         right: 0;
         width: 100%;
         height: 100vh;
+        padding-block: 2em;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
         margin-right: -100%;
         background: #000000cc;
         transition: .4s;
+    }
+
+    .headerNav li {
+        margin-block: 2em;
     }
 
     .headerNav.active {
@@ -591,72 +687,3 @@ header {
 }
 
 
-
-/* Remaking header */
-
-header {
-    position: fixed;
-    width: 100%;
-    padding-inline: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 100;
-    backdrop-filter: blur(5px);
-    background: #00000033;
-}
-
-.headerLogo {
-    width: 60px;
-    height: 60px;
-    padding: 5px;
-    display: grid;
-    place-items: center;
-}
-
-.headerLogo img {
-    width: 85%;
-    height: 85%;
-}
-
-header nav {
-    width: 40%;
-    display: flex;
-    justify-content: space-around;
-}
-
-header ul {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-inline: 1em;
-    list-style: none;
-}
-
-.nav-link {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.4em;
-    color: white;
-    transition: .4s;
-}
-
-.nav-link:hover {
-    letter-spacing: 1px;
-    color: #f65d35;
-}
-
-.headerBtn {
-    /* position: absolute; */
-    top: 10px;
-    right: 10px;
-    width: 60px;
-    height: 60px;
-    background: #d30;
-    display: none;
-}
-
-header:has(.headerNav.active) .headerBtn{
-    position: absolute;
-}
